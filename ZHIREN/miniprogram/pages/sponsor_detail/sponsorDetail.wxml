@@ -1,0 +1,59 @@
+<!--miniprogram/pages/sponsor_detail/sponsorDetail.wxml-->
+<view class='zr_sponsorDetail'>
+  <view class='zr_sponsorDetail_info'>
+    <view class='zr_sponsorDetail_avatar'>
+      <image src='http://img5.imgtn.bdimg.com/it/u=613776445,2854164868&fm=15&gp=0.jpg'></image>
+    </view>
+    <view class='zr_sponsorDetail_name'>
+      <text>{{sponsor.name}}</text>
+    </view>
+    <view class='zr_sponsorDetail_intro' style='-webkit-line-clamp: {{lineClamp}}'>
+      <text>{{sponsor.introduce}}</text>
+    </view>
+    <view class='zr_sponsorDetail_openOrClose' bindtap="openOrClose">
+      <block wx:if="{{!open}}">
+        <text>展开全部</text>
+      </block>
+      <block wx:else>
+        <text>全部收起</text>
+      </block>
+    </view>
+    <view class="zr_sponsorDetail_follow {{sponsor.isFollowed ? 'on' : ''}}" bindtap='follow' data-index="{{index}}">
+          <block wx:if="{{!sponsor.isFollowed}}">
+            <text>关注</text>
+          </block>
+          <block wx:else>
+            <text>已关注</text>
+          </block>
+    </view>
+  </view>
+  <view class='zr_sponsorDetail_totalSalon'>
+    <view class='zr_sponsorDetail_salonNums'>
+      <text>主办</text>
+      <text style='margin:0 10rpx;'>38</text>
+      <text>场沙龙</text>
+    </view>
+    <view class='zr_sponsorDetail_shalons'>
+      <view class='zr_sponsorDetail_shalonTitle'>
+        印度市场的财务、法务问题交流
+      </view>
+      <view class='zr_sponsorDetail_salonPoster'>
+        <image src='/images/a3.png'></image>
+      </view>
+      <view class='zr_sponsorDetail_jions'>
+        <!-- <view class='zr_sponsorDetail_jionAvatar'> -->
+          <!-- <image></image> -->
+        <!-- </view> -->
+        <view class='zr_sponsorDetail_joinsInfo'>
+          <text>16人报名/7人感兴趣</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+    <view class="zan-dialog__mask" bindtap="toggleDialog" />
+    <view class="zan-dialog__container" bindtap='isClicked'>
+      <text style='margin-left:40rpx;'>取消关注</text>
+    </view>
+  </view>
+</view>
