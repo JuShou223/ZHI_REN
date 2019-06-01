@@ -1,2 +1,29 @@
 <!--miniprogram/pages/mine/mine.wxml-->
-<text>miniprogram/pages/mine/mine.wxml</text>
+<view class="zr-up">
+<view class="zr-up1both">
+  <view class="zr-up1">
+    <view class="zr-touxiang">
+      <image src="{{avatarUrl}}"/>
+    </view>
+  </view>
+  <view class="zr-up2">
+    <view class="zr-up2-1">
+      <image src="/images/cook.png"/>
+    </view>   
+    <view class="zr-up2-2">
+      <image src="/images/setting.png"/>
+    </view>
+  </view>
+</view> 
+  <view class="zr-jiantou">></view>
+   
+    
+  <view class="zr-tab">
+    <view class="zr-tab" wx:for="{{lists}}" bindtap="part1">{{item.name}}</view>
+  </view>
+  
+</view>
+<view class="zr-down" >
+  
+</view>
+
