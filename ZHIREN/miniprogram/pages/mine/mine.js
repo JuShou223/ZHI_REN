@@ -5,15 +5,42 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    avatarUrl:'',
+    lists:[
+      {
+        name:'参加',
+        content:[]
+      },
+      {
+        name: '感兴趣',
+        content: []
+      },
+      {
+        name: '关注',
+        content: []
+      }
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this;
+    //获取用户头像与昵称
+    wx.getUserInfo({
+      success: function (res) {
+        console.log(res);
+        that.setData({
+          nickName: res.userInfo.nickName,
+          avatarUrl: res.userInfo.avatarUrl,
+        })
+      },
+    })
+
 
   },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
