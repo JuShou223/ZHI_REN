@@ -1,2 +1,39 @@
 <!--miniprogram/pages/salon/salon.wxml-->
-<text>miniprogram/pages/salon/salon.wxml</text>
+<view class='list' wx:for='{{list}}' catchtap='toSalonDetail'>
+  <view class="title">{{title}}</view>
+  <view class="zr_container">
+    <view class='poster'>
+      <image src="{{imageInfo}}"></image>
+    </view>
+    <view class="info">
+      <view class='info-info1'>
+        <image src="{{tabImage1}}" style='width:30rpx;height:30rpx;margin: 5rpx;'></image>
+        <text>{{info1}}</text>
+      </view>
+      <view class='info-info2' style='margin: 15rpx 0;'>
+        <image src="{{tabImage2}}" style='width:30rpx;height:30rpx;margin: 5rpx;'></image>
+        <text>{{info2}}</text>
+      </view>
+      <view class='info-info3' style='margin: 15rpx 0;'>
+        <image src="{{tabImage3}}" style='width:30rpx;height:30rpx;margin: 5rpx;'></image>
+        <text>{{info3}}</text>
+      </view>
+      <view class='info-info4'>
+        <image src="{{tabImage4}}" style='width:30rpx;height:30rpx;margin: 5rpx;'></image>
+        <text>{{info4}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="other">
+    <view class="thumb" style='overflow:hidden;'>
+      <image src='{{imageUrl1}}' style='float:left;width:50rpx;height:50rpx;border-radius: 50%;'></image>
+      <image src='{{imageUrl2}}' style='float:left;width:50rpx;height:50rpx;border-radius: 50%;margin:0 -15rpx;'></image>
+      <image src='{{imageUrl3}}' style='float:left;width:50rpx;height:50rpx;border-radius: 50%;'></image>
+    </view>
+    <view class='words'>
+      <text class="left">{{join}}人报名 / {{hobby}}人感兴趣</text>
+      <!-- <text class="right">已结束</text> -->
+    </view>
+    <view class='right'>已结束</view>   
+  </view>
+</view>
