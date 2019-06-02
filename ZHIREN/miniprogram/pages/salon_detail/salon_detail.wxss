@@ -16,7 +16,7 @@ image{
   border-radius: 2%;
   background-color: #fff;
   position: absolute;
-  top: 550rpx;
+  top: 500rpx;
   left: 50%;
   margin-left: -45%;
   font-size: 30rpx;
@@ -145,4 +145,40 @@ image{
   margin-left: 30rpx;
   margin-bottom: 20rpx;
 }
+.bottomBar{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  height: 100rpx;
+  background-color: #fff;
+  overflow: hidden;
+}
+.btb_content{
+  font-size: 32rpx;
+  font-weight: 800;
+  overflow: hidden;
+  flex: 1;
+}
+.btb_all{
+  overflow: hidden;
+  float: left;
+  margin-top:  30rpx;
+}
+.btb_icon{
+  float: left;
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+.btb_text{
+  float: left;
+  line-height: 40rpx;
+}
 
+.btn{
+  padding: 16rpx 50rpx;
+  margin-top: 16rpx;
+  background-color: #eee;
+  color: #aab0ab;
+}

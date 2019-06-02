@@ -63,17 +63,22 @@ image {
 }
 
 .zr_sponsorDetail_shalons{
-  width: 710rpx;
+  width: 650rpx;
   margin: 0 auto;
   background-color: #ffffff;
   border-bottom: 1px solid #dfe4e5;
-
+  overflow: hidden;
+  padding: 30rpx;
+  margin-bottom: 16rpx;
+  border-radius: 10rpx;
+  position: relative;
 }
 
 .zr_sponsorDetail_shalonTitle{
   font-size: 32rpx;
   font-weight: 800;
   letter-spacing: 4rpx;
+  margin-bottom: 12rpx;
 }
 
 .zr_sponsorDetail_salonNums{
@@ -86,5 +91,24 @@ image {
 .zr_sponsorDetail_salonPoster{
   width: 260rpx;
   height: 160rpx;
+  float: left;
+  margin-right: 10rpx;
+}
+.zr_sponsorDetail_salonInfo{
+  font-size: 28rpx;
+  color: #acb0ac;
+}
+.zr_sponsorDetail_joinsInfo{
+line-height: 30rpx;
+height: 60rpx;
+width: 350rpx;
+float: left;
+}
+.zr_sponsorDetail_isStil{
+  font-size: 30rpx;
+  position: absolute;
+  bottom: 30rpx;
+  right: 30rpx;
+  color: #acb0ac;
 
 }

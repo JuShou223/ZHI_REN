@@ -18,6 +18,7 @@ Page({
     let index = wx.getStorageSync('index');
     this.data.sponsors[index].isFollowed = false;
     const sponsors = this.data.sponsors;
+    wx.setStorageSync('sponsors', sponsors)
     this.setData({
       sponsors,
     })
@@ -35,15 +36,16 @@ Page({
       isFollowed = !isFollowed;
       this.data.sponsors[index].isFollowed = isFollowed;
       const sponsors = this.data.sponsors;
+      wx.setStorageSync('sponsors', sponsors)
       this.setData({
         sponsors
       })
     }
   },
-  go_sponsorDetail(e){
-    let index = e.currentTarget.dataset.index;
+  go_sponsorDetail(e) {
+    let name = e.currentTarget.dataset.name;
     wx.navigateTo({
-      url: `/pages/sponsor_detail/sponsorDetail?index=${index}`,
+      url: `/pages/sponsor_detail/sponsorDetail?name=${name}`,
     })
   },
   /**
@@ -53,16 +55,7 @@ Page({
     wx.setNavigationBarTitle({
       title: '主办方'
     })
-    wx.request({
-      url: 'https://www.easy-mock.com/mock/5cf34b4428263d2e19427451/zr-data1/zr',
-
-      success: (res) => {
-        console.log(res)
-        this.setData({
-          sponsors: res.data.data.sponsors
-        })
-      }
-    })
+    
   },
 
   /**
@@ -76,7 +69,19 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    let that = this;
+    wx.showLoading({
+      title: '加载中',
+    })
+    setTimeout(function () {
+      let sponsors = wx.getStorageSync('sponsors')
+      that.setData({
+        sponsors
+      })
+      wx.hideLoading()
+    }, 500)
 
+   
   },
 
   /**

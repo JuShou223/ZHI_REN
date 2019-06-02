@@ -1,12 +1,6 @@
-<<<<<<< HEAD
-<!--miniprogram/pages/salon/salon.wxml-->
-<view class='list' wx:for='{{list}}' data-id='item.id' catchtap='toSalonDetail'>
-  <view class="title">{{title}}</view>
-=======
 <!-- miniprogram/pages/salon/salon.wxml -->
-<view class='list' wx:for='{{list}}' catchtap='toSalonDetail'>
+<view class='list' wx:for='{{list}}' bindtap='tosalonDetail' data-id="{{item.id}}">
   <view class="title">{{item.title}}</view>
->>>>>>> 106984f077a09f6d3a26b9e1f3e59d3073f2ba83
   <view class="zr_container">
     <view class='poster'>
       <image src="{{item.imgUrl}}"></image>
@@ -43,7 +37,7 @@
       
     </view>
     <view class='words'>
-      <text class="left">{{join}}人报名 / {{hobby}}人感兴趣</text>
+      <text class="left">{{item.joins}}人报名 / {{item.interests}}人感兴趣</text>
     </view>
     <view class='right'>已结束</view>   
   </view>

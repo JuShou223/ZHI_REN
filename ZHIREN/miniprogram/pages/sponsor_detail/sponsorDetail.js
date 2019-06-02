@@ -9,7 +9,8 @@ Page({
     },
     lineClamp:3,
     open:false,
-    showDialog: false
+    showDialog: false,
+    name:''
   },
   toggleDialog() {
     this.setData({
@@ -18,13 +19,25 @@ Page({
   },
   isClicked: function () {
     this.data.sponsor.isFollowed = false;
-    const sponsor = this.data.sponsor;
+    let sponsor = this.data.sponsor
+    let sponsors = wx.getStorageSync('sponsors')
+    for (let i = 0; i < sponsors.length; i++) {
+      if (sponsors[i].name == sponsor.name) {
+        sponsors[i] = sponsor;
+      }
+    }
+    wx.setStorageSync('sponsors', sponsors)
     this.setData({
-      sponsor,
+      sponsor
     })
     this.toggleDialog();
   },
-  follow: function (e) {
+  tosalonDetail: function (e) {
+    wx.navigateTo({
+      url: `/pages/salon_detail/salon_detail?id=${e.currentTarget.dataset.id}`,
+    })
+  },
+  follow: function () {
     let isFollowed = this.data.sponsor.isFollowed;
     if (isFollowed) {
       this.setData({
@@ -33,12 +46,20 @@ Page({
     } else {
       isFollowed = !isFollowed;
       this.data.sponsor.isFollowed = isFollowed;
-      const sponsor = this.data.sponsor;
+      let sponsor = this.data.sponsor
+      let sponsors = wx.getStorageSync('sponsors')
+      for (let i = 0; i < sponsors.length; i++) {
+        if (sponsors[i].name == sponsor.name) {
+          sponsors[i] = sponsor;
+        }
+      }
+      wx.setStorageSync('sponsors', sponsors)
       this.setData({
         sponsor
       })
     }
   },
+  
   openOrClose(){
     let open = this.data.open;
     open = !open;
@@ -59,19 +80,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let index = +options.index
     wx.setNavigationBarTitle({
       title: '主办方主页'
     })
-    wx.request({
-      url: 'https://www.easy-mock.com/mock/5cf34b4428263d2e19427451/zr-data1/zr',
-
-      success: (res) => {
-        console.log(res)
-        this.setData({
-          sponsor: res.data.data.sponsors[index]
-        })
-      }
+    this.setData({
+      name:options.name
     })
   },
 
@@ -79,14 +92,31 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let that = this
+    wx.showLoading({
+      title: '加载中',
+    })
+    setTimeout(function () {
+      let name = that.data.name;
+      let sponsors = wx.getStorageSync('sponsors')
+      for (let i = 0; i < sponsors.length; i++) {
+        if (sponsors[i].name == name) {
+          that.data.sponsor = sponsors[i];
+        }
+        let sponsor = that.data.sponsor
+        that.setData({
+          sponsor
+        })
+      }
+      wx.hideLoading()
+    }, 500)
   },
 
   /**

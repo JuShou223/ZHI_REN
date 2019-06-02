@@ -7,11 +7,7 @@ Page({
   data: {
     list: []
   },
-<<<<<<< HEAD
-  toSalonDetail: function(e) {
-=======
   tosalonDetail: function (e) {
->>>>>>> 106984f077a09f6d3a26b9e1f3e59d3073f2ba83
     wx.navigateTo({
       url: `/pages/salon_detail/salon_detail?id=${e.currentTarget.dataset.id}`,
     })
@@ -37,13 +33,27 @@ Page({
     wx.setNavigationBarTitle({
       title: '沙龙'
     })
-    wx.request({
-      url: 'https://www.easy-mock.com/mock/5cf34b4428263d2e19427451/zr-data1/zr',
-
-      success: (res) => {
-        this.getSalons(res.data.data.sponsors);
-      }
+    let that = this;
+    wx.showLoading({
+      title: '加载中',
     })
+    setTimeout(function () {
+      let sponsors = wx.getStorageSync('sponsors');
+      if (sponsors) {
+        that.getSalons(sponsors);
+      } else {
+        wx.request({
+          url: 'https://www.easy-mock.com/mock/5cf34b4428263d2e19427451/zr-data1/zr',
+
+          success: (res) => {
+            that.getSalons(res.data.data.sponsors);
+            wx.setStorageSync('sponsors', res.data.data.sponsors)
+          }
+        })
+      }
+      wx.hideLoading()
+    }, 500)
+    
   },
 
   /**

@@ -9,14 +9,14 @@
     </view>
     <view class="zr-up2">
       <view class="zr-up2-1">
-      <button open-type="contact" bindcontact="handleContact" style='width:100rpx;height:60rpx;background-color:#fff'>
-        <image src="/images/cook.png" style='width:40rpx;height:40rpx'/>
-      </button>
+        <button open-type="contact" style='width:100rpx;height:60rpx;background-color:#fff'>
+          <image src="/images/cook.png" style='width:40rpx;height:40rpx' />
+        </button>
       </view>
       <view class="zr-up2-2" bindtap="jumpset">
-     
+
         <image src="/images/setting.png" />
-      
+
       </view>
     </view>
 
@@ -48,6 +48,89 @@
           </view>
         </block>
       </view>
+    </block>
+    <block wx:else>
+      <block wx:if="{{curIndex==2}}">
+        <view class="zr_sponsor">
+
+          <!-- 循环数据里的sponsors(主办方) -->
+          <!-- wx:for="{{sponsors}}" wx:key="{{index}}" -->
+          <view class="zr_content" wx:for="{{curContent}}" wx:key="{{index}}">
+            <!-- 虚线上半部 -->
+            <view class="zr_sponsor_top">
+              <!-- 主办方头像 -->
+              <view class="zr_sponsor_avatar" data-name="{{item.name}}" bindtap='go_sponsorDetail'>
+                <image src="{{item.imgUrl}}" />
+              </view>
+              <!-- 主办方的名字和介绍 -->
+              <view class="zr_sponsor_nameAndIntro" data-name="{{item.name}}" bindtap='go_sponsorDetail'>
+                <!-- 名字 -->
+                <view class="zr_sponsor_name">
+                  <text>{{item.name}}</text>
+                </view>
+                <!-- 介绍 -->
+                <view class="zr_sponsor_intro">
+                  <text>{{item.introduce}}</text>
+                </view>
+              </view>
+              <!-- 关注按钮 -->
+              <view class="zr_sponsor_follow {{item.isFollowed ? 'on' : ''}}" bindtap='follow' data-index="{{index}}">
+                <block wx:if="{{!item.isFollowed}}">
+                  <text>关注</text>
+                </block>
+                <block wx:else>
+                  <text>已关注</text>
+                </block>
+              </view>
+            </view>
+            <!-- 虚线下半部 -->
+            <view class="zr_sponsor_bottom" data-name="{{item.name}}" bindtap='go_sponsorDetail'>
+              <!-- 举办的沙龙场数 -->
+              <view class="zr_sponsor_salonNums">
+                <text>共举办{{item.totalSalons.numbers}}场沙龙</text>
+              </view>
+            </view>
+          </view>
+
+          <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+            <view class="zan-dialog__mask" bindtap="toggleDialog" />
+            <view class="zan-dialog__container" bindtap='isClicked'>
+              <text style='margin-left:40rpx;'>取消关注</text>
+            </view>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{curIndex==1}}">
+        <view class='zr_sponsorDetail_shalons' wx:for="{{curContent}}" bindtap='tosalonDetail' data-id="{{item.id}}">
+          <view class='zr_sponsorDetail_shalonTitle'>
+            {{item.title}}
+          </view>
+          <view class='zr_sponsorDetail_salonPoster'>
+            <image src='{{item.imgUrl}}'></image>
+          </view>
+          <view class='zr_sponsorDetail_salonInfo'>
+            <view class='zr_sponsorDetail_jions'>
+              <!-- <view class='zr_sponsorDetail_jionAvatar'> -->
+              <!-- <image></image> -->
+              <!-- </view> -->
+              <view class='zr_sponsorDetail_joinsInfo'>
+                <text>{{item.joins}}人报名/{{item.interests}}人感兴趣</text>
+              </view>
+            </view>
+            <view class='zr_sponsorDetail_salonStartTime'>
+              <text>{{item.startTime}}</text>
+            </view>
+            <view class='zr_sponsorDetail_salonAddress'>
+              <text>{{item.address}}</text>
+            </view>
+          </view>
+          <view class='zr_sponsorDetail_isStil'>
+            <view class='zr_sponsorDetail_isStilText'>
+              <text>已结束</text>
+            </view>
+          </view>
+        </view>
+      </block>
     </block>
   </view>
 </view>

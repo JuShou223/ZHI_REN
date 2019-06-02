@@ -7,11 +7,11 @@
       <!-- 虚线上半部 -->
       <view class="zr_sponsor_top" >
         <!-- 主办方头像 -->
-        <view class="zr_sponsor_avatar" data-index="{{index}}" bindtap='go_sponsorDetail'>
+        <view class="zr_sponsor_avatar" data-name="{{item.name}}" bindtap='go_sponsorDetail'>
           <image src="{{item.imgUrl}}" />
         </view>
         <!-- 主办方的名字和介绍 -->
-        <view class="zr_sponsor_nameAndIntro" data-index="{{index}}" bindtap='go_sponsorDetail'>
+        <view class="zr_sponsor_nameAndIntro" data-name="{{item.name}}"bindtap='go_sponsorDetail'>
           <!-- 名字 -->
           <view class="zr_sponsor_name">
             <text>{{item.name}}</text>
@@ -32,14 +32,16 @@
         </view>
       </view>
       <!-- 虚线下半部 -->
-      <view class="zr_sponsor_bottom" data-index="{{index}}" bindtap='go_sponsorDetail'>
+      <view class="zr_sponsor_bottom" data-name="{{item.name}}"bindtap='go_sponsorDetail'>
         <!-- 举办的沙龙场数 -->
         <view class="zr_sponsor_salonNums">
           <text>共举办{{item.totalSalons.numbers}}场沙龙</text>
         </view>
+        <block wx:if="{{item.totalSalons.numbers>0}}">
         <view class="zr_sponsor_latelySalon">
           <text>最近沙龙：{{item.latelySalon.title}}</text>
         </view>
+        </block>
       </view>
     </view>
   
