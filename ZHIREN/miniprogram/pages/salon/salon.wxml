@@ -1,12 +1,9 @@
-<<<<<<< HEAD
 <!--miniprogram/pages/salon/salon.wxml-->
 <view class='list' wx:for='{{list}}' data-id='item.id' catchtap='toSalonDetail'>
   <view class="title">{{title}}</view>
-=======
 <!-- miniprogram/pages/salon/salon.wxml -->
 <view class='list' wx:for='{{list}}' catchtap='toSalonDetail'>
   <view class="title">{{item.title}}</view>
->>>>>>> 106984f077a09f6d3a26b9e1f3e59d3073f2ba83
   <view class="zr_container">
     <view class='poster'>
       <image src="{{item.imgUrl}}"></image>
