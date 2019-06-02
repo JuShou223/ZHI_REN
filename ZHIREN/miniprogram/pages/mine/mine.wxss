@@ -37,11 +37,19 @@ image{
   right: 0;
   top:0;
 }
-.zr-up2-1,.zr-up2-2{
+.zr-up2-2{
   padding: 30rpx 20rpx;
   width: 40rpx;
   height: 40rpx;
   float: left;
+}
+.zr-up2-1
+{
+  float: left;
+  margin-top: 18rpx;
+}
+button::after{
+  border:0;
 }
 /* view{
   border: 1px solid #000;

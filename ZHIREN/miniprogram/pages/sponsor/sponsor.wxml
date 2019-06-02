@@ -1,6 +1,6 @@
 <!-- miniprogram/pages/sponsor/sponsor.wxml -->
 <view class="zr_sponsor">
-  <scroll-view class="zr_container" scroll-y>
+  
     <!-- 循环数据里的sponsors(主办方) -->
     <!-- wx:for="{{sponsors}}" wx:key="{{index}}" -->
     <view class="zr_content" wx:for="{{sponsors}}" wx:key="{{index}}" >
@@ -42,7 +42,7 @@
         </view>
       </view>
     </view>
-  </scroll-view>
+  
   <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
     <view class="zan-dialog__mask" bindtap="toggleDialog" />
     <view class="zan-dialog__container" bindtap='isClicked'>
