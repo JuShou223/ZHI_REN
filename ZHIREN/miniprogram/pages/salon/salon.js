@@ -7,9 +7,13 @@ Page({
   data: {
     list: []
   },
+<<<<<<< HEAD
+  toSalonDetail: function(e) {
+=======
   tosalonDetail: function (e) {
+>>>>>>> 106984f077a09f6d3a26b9e1f3e59d3073f2ba83
     wx.navigateTo({
-      url: `/pages/salonDetail/salonDetail?id=${e.currentTarget.dataset.id}`,
+      url: `/pages/salon_detail/salon_detail?id=${e.currentTarget.dataset.id}`,
     })
   },
   getSalons(all){
