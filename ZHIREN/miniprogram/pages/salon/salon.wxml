@@ -1,9 +1,9 @@
-<!--miniprogram/pages/salon/salon.wxml-->
+<!-- miniprogram/pages/salon/salon.wxml -->
 <view class='list' wx:for='{{list}}' catchtap='toSalonDetail'>
-  <view class="title">{{title}}</view>
+  <view class="title">{{item.title}}</view>
   <view class="zr_container">
     <view class='poster'>
-      <image src="{{imageInfo}}"></image>
+      <image src="{{item.imgUrl}}"></image>
     </view>
     <view class="info">
       <view class='info-info1'>
@@ -32,7 +32,6 @@
     </view>
     <view class='words'>
       <text class="left">{{join}}人报名 / {{hobby}}人感兴趣</text>
-      <!-- <text class="right">已结束</text> -->
     </view>
     <view class='right'>已结束</view>   
   </view>

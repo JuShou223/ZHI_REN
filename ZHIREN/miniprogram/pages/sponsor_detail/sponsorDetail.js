@@ -6,29 +6,6 @@ Page({
    */
   data: {
     sponsor: {
-      name: "职人社",
-      introduce: "职人社时新一代的互联网职业成长社群 , 通过内容、社群于沙龙 , 连接优秀的人与公司 , 帮助双方持续成长 , 取得更大的成功。我们的职业经纪人团队 , 已与大量独角兽和细分领域第一的公司建立合作。",
-      totalSalons: {
-        numbers: 4,
-        salons: [
-          {
-            title: '印度市场的财务、法务问题交流'
-          },
-          {
-            title: '印度市场的财务、法务问题交流'
-          },
-          {
-            title: '印度市场的财务、法务问题交流'
-          },
-          {
-            title: '印度市场的财务、法务问题交流'
-          }
-        ]
-      },
-      latelySalon: {
-        title: '教育行业里的增长该怎么做'
-      },
-      isFollowed: false
     },
     lineClamp:3,
     open:false,
@@ -82,8 +59,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let index = +options.index
     wx.setNavigationBarTitle({
       title: '主办方主页'
+    })
+    wx.request({
+      url: 'https://www.easy-mock.com/mock/5cf34b4428263d2e19427451/zr-data1/zr',
+
+      success: (res) => {
+        console.log(res)
+        this.setData({
+          sponsor: res.data.data.sponsors[index]
+        })
+      }
     })
   },
 

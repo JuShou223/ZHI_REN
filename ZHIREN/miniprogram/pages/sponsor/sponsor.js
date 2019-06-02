@@ -5,173 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    sponsors: [
-      {
-        // 主办方名字
-        name: "职人社",
-        // 主办方头像地址
-        imgUrl:'',
-        // 主办方简介
-        introduce: "职人社时新一代的互联网职业成长社群 , 通过内容、社群于沙龙 , 连接优秀的人与公司 , 帮助双方持续成长 , 取得更大的成功。我们的职业经纪人团队 , 已与大量独角兽和细分领域第一的公司建立合作。",
-        // 主办方主办的所有沙龙
-        totalSalons: {
-          // 沙龙数
-          numbers: 4,
-          // 所有沙龙
-          salons: [
-            {
-              // 沙龙标题
-              title: '印度市场的财务、法务问题交流',
-              // 沙龙海报地址
-              imgUrl:'',
-              // 沙龙开始时间
-              startTime:'',
-              // 报名截止时间
-              deadline:'',
-              // 沙龙举办地址
-              address: '',
-              // 参与人数
-              canyurenshu: '',
-              // 门票
-              ticket:'',
-              // 报名人数
-              joins:'',
-              // 感兴趣人数
-              interests:'',
-              // 活动详情
-              activity_detail:'',
-              // 嘉宾数
-              guests:'',
-              // 现场照片
-              scene_photo:'',
-              // 相关文章
-              article:''
-            },
-            {
-              title: '印度市场的财务、法务问题交流'
-            },
-            {
-              title: '印度市场的财务、法务问题交流'
-            },
-            {
-              title: '印度市场的财务、法务问题交流'
-            }
-          ]
-        },
-        // 最近举办的沙龙
-        latelySalon: {
-          title: '教育行业里的增长该怎么做'
-        },
-        isFollowed: false
-      },
-      {
-        name: "职人社的朋友",
-        introduce: "这里时职人社朋友们的聚集地 , 他们和职人社一起搞一些有趣的沙龙。",
-        totalSalons: {
-          numbers: 2,
-          salons: [
-            {
-              title: '印度市场的财务、法务问题交流'
-            },
-            {
-              title: '印度市场的财务、法务问题交流'
-            }
-          ]
-        },
-        latelySalon: {
-          title: '印度市场的财务、法务问题交流'
-        },
-        isFollowed: false
-      },
-      {
-        name: "职人社",
-        introduce: "职人社时新一代的互联网职业成长社群 , 通过内容、社群于沙龙 , 连接优秀的人与公司 , 帮助双方持续成长 , 取得更大的成功。我们的职业经纪人团队 , 已与大量独角兽和细分领域第一的公司建立合作。",
-        totalSalons: {
-          numbers: 4,
-          salons: [
-            {
-              title: '印度市场的财务、法务问题交流'
-            },
-            {
-              title: '印度市场的财务、法务问题交流'
-            },
-            {
-              title: '印度市场的财务、法务问题交流'
-            },
-            {
-              title: '印度市场的财务、法务问题交流'
-            }
-          ]
-        },
-        latelySalon: {
-          title: '教育行业里的增长该怎么做'
-        },
-        isFollowed: false
-      },
-      {
-        name: "职人社的朋友",
-        introduce: "这里时职人社朋友们的聚集地 , 他们和职人社一起搞一些有趣的沙龙。",
-        totalSalons: {
-          numbers: 2,
-          salons: [
-            {
-              title: '印度市场的财务、法务问题交流'
-            },
-            {
-              title: '印度市场的财务、法务问题交流'
-            }
-          ]
-        },
-        latelySalon: {
-          title: '印度市场的财务、法务问题交流'
-        },
-        isFollowed: false
-      },
-      {
-        name: "职人社",
-        introduce: "职人社时新一代的互联网职业成长社群 , 通过内容、社群于沙龙 , 连接优秀的人与公司 , 帮助双方持续成长 , 取得更大的成功。我们的职业经纪人团队 , 已与大量独角兽和细分领域第一的公司建立合作。",
-        totalSalons: {
-          numbers: 4,
-          salons: [
-            {
-              title: '印度市场的财务、法务问题交流'
-            },
-            {
-              title: '印度市场的财务、法务问题交流'
-            },
-            {
-              title: '印度市场的财务、法务问题交流'
-            },
-            {
-              title: '印度市场的财务、法务问题交流'
-            }
-          ]
-        },
-        latelySalon: {
-          title: '教育行业里的增长该怎么做'
-        },
-        isFollowed: false
-      },
-      {
-        name: "职人社的朋友",
-        introduce: "这里时职人社朋友们的聚集地 , 他们和职人社一起搞一些有趣的沙龙。",
-        totalSalons: {
-          numbers: 2,
-          salons: [
-            {
-              title: '印度市场的财务、法务问题交流'
-            },
-            {
-              title: '印度市场的财务、法务问题交流'
-            }
-          ]
-        },
-        latelySalon: {
-          title: '印度市场的财务、法务问题交流'
-        },
-        isFollowed: false
-      }
-    ],
+    sponsors: [],
     showDialog: false
   },
   toggleDialog() {
@@ -206,9 +40,10 @@ Page({
       })
     }
   },
-  go_sponsorDetail(){
+  go_sponsorDetail(e){
+    let index = e.currentTarget.dataset.index;
     wx.navigateTo({
-      url: '/pages/sponsor_detail/sponsorDetail',
+      url: `/pages/sponsor_detail/sponsorDetail?index=${index}`,
     })
   },
   /**
@@ -217,6 +52,16 @@ Page({
   onLoad: function (options) {
     wx.setNavigationBarTitle({
       title: '主办方'
+    })
+    wx.request({
+      url: 'https://www.easy-mock.com/mock/5cf34b4428263d2e19427451/zr-data1/zr',
+
+      success: (res) => {
+        console.log(res)
+        this.setData({
+          sponsors: res.data.data.sponsors
+        })
+      }
     })
   },
 
