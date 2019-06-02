@@ -1,4 +1,4 @@
-// miniprogram/pages/editor/editor.js
+// miniprogram/pages/set/set.js
 Page({
 
   /**
@@ -7,21 +7,12 @@ Page({
   data: {
 
   },
-  clicked(e){
-    const name =['手机号','微信号','真实姓名','性别','公司','职位','职业经历']
-    let index = e.currentTarget.dataset.index;
-    let n =name[index];
-    wx.navigateTo({
-      url: `/pages/basicinfo/basicinfo?name=${n}`,
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.setNavigationBarTitle({
-      title: '编辑',
-    })
+
   },
 
   /**

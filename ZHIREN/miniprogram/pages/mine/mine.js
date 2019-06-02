@@ -27,6 +27,11 @@ Page({
       url: '/pages/editor/editor',
     })
   },
+    jumpset:function() {
+      wx.navigateTo({
+        url: '../set/set',
+      })
+  },
   part1(e){
     let index = e.currentTarget.dataset.index;
     let curContent = this.data.lists[index].content;
@@ -87,7 +92,12 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    wx.showLoading({
+      title: '加载中',
+    })
+    setTimeout(function () {
+      wx.hideLoading()
+    }, 1500)
   },
 
   /**

@@ -1,13 +1,31 @@
 {
   "pages": [
+<<<<<<< HEAD
+    
+=======
+<<<<<<< HEAD
+    "pages/salon/salon",
+    "pages/salon_detail/salon_detail",
+    "pages/sponsor_detail/sponsorDetail",
+    "pages/sponsor/sponsor", 
+    "pages/mine/mine"
+=======
+>>>>>>> a4b029c2dc5f286cde671f811f0d4b78bfd2371c
     "pages/login/login",
     "pages/mine/mine",
     "pages/salon/salon",
     "pages/editor/editor",
     "pages/sponsor/sponsor",
+<<<<<<< HEAD
+    "pages/sponsor_detail/sponsorDetail",
+    "pages/basicinfo/basicinfo"
+=======
     "pages/sponsor_detail/sponsorDetail"
+>>>>>>> 106984f077a09f6d3a26b9e1f3e59d3073f2ba83
+>>>>>>> a4b029c2dc5f286cde671f811f0d4b78bfd2371c
   ],
   "window": {
+    "enablePullDownRefresh": true,
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#0752aa",

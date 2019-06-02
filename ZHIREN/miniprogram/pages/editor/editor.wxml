@@ -11,7 +11,7 @@
       <view class='name'>
         <text>手机号</text>
       </view>
-      <view class='btn'>
+      <view class='btn' data-index="0" bindtap='clicked'>
         <text>授权</text>
       </view>
     </view>
@@ -22,7 +22,7 @@
       <view class='name'>
         <text>微信号</text>
       </view>
-      <view class='btn'>
+      <view class='btn' data-index="1" bindtap='clicked'>
         <text>填写</text>
       </view>
     </view>
@@ -33,7 +33,7 @@
       <view class='name'>
         <text>真实姓名</text>
       </view>
-      <view class='btn'>
+      <view class='btn ' data-index="2" bindtap='clicked'>
         <text>填写</text>
       </view>
     </view>
@@ -44,7 +44,7 @@
       <view class='name'>
         <text>性别</text>
       </view>
-      <view class='text'>
+      <view class='text' data-index="3" bindtap='clicked'>
         <text decode="{{true}}">男&nbsp;&nbsp;&nbsp;&nbsp;></text>
       </view>
     </view>
@@ -59,7 +59,7 @@
         <view class='name'>
           <text>公司</text>
         </view>
-        <view class='btn'>
+        <view class='btn' data-index="4" bindtap='clicked'>
           <text>填写</text>
         </view>
       </view>
@@ -70,7 +70,7 @@
         <view class='name'>
           <text>职位</text>
         </view>
-        <view class='btn'>
+        <view class='btn' data-index="5" bindtap='clicked'>
           <text>填写</text>
         </view>
       </view>
@@ -81,7 +81,7 @@
         <view class='name'>
           <text>职业经历</text>
         </view>
-        <view class='btn'>
+        <view class='btn' data-index="6" bindtap='clicked'>
           <text>填写</text>
         </view>
       </view>
