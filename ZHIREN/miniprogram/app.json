@@ -1,11 +1,13 @@
 {
   "pages": [
+    
     "pages/login/login",
     "pages/mine/mine",
     "pages/salon/salon",
     "pages/editor/editor",
     "pages/sponsor/sponsor",
-    "pages/sponsor_detail/sponsorDetail"
+    "pages/sponsor_detail/sponsorDetail",
+    "pages/basicinfo/basicinfo"
   ],
   "window": {
     "enablePullDownRefresh": true,

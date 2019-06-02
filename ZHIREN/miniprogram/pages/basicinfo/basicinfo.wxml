@@ -1,0 +1,6 @@
+<!--miniprogram/pages/basicinfo/basicinfo.wxml-->
+<view class="part1">微信号</view>
+<view class="input-info">
+<textarea  class="weui-search-bar__input" placeholder="请输入{{detail}}" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping"cols="10" rows="" auto-height:true />
+</view>
+<button>确认</button>
