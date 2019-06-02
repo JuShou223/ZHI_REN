@@ -6,29 +6,35 @@
       <image src="{{item.imgUrl}}"></image>
     </view>
     <view class="info">
-      <view class='info-info1'>
-        <image src="{{tabImage1}}" style='width:30rpx;height:30rpx;margin: 5rpx;'></image>
-        <text>{{info1}}</text>
+      <view class='info-info'>
+      <view class='img avatar' style='width:40rpx;height:40rpx'>
+        <image src="{{item.avatar}}"></image>
+        </view>
+        <text>{{item.name}}</text>
       </view>
-      <view class='info-info2' style='margin: 15rpx 0;'>
-        <image src="{{tabImage2}}" style='width:30rpx;height:30rpx;margin: 5rpx;'></image>
-        <text>{{info2}}</text>
+      <view class='info-info'>
+         <view class='img'>
+        <image src="/images/sz.png"></image>
+        </view>
+        <text>{{item.deadline}}</text>
       </view>
-      <view class='info-info3' style='margin: 15rpx 0;'>
-        <image src="{{tabImage3}}" style='width:30rpx;height:30rpx;margin: 5rpx;'></image>
-        <text>{{info3}}</text>
+      <view class='info-info'>
+         <view class='img'>
+        <image src="/images/address.png"></image>
+        </view>
+        <text>{{item.address}}</text>
       </view>
-      <view class='info-info4'>
-        <image src="{{tabImage4}}" style='width:30rpx;height:30rpx;margin: 5rpx;'></image>
-        <text>{{info4}}</text>
+      <view class='info-info'>
+         <view class='img'>
+        <image src="/images/free.png"></image>
+        </view>
+        <text>{{item.ticket}}</text>
       </view>
     </view>
   </view>
   <view class="other">
     <view class="thumb" style='overflow:hidden;'>
-      <image src='{{imageUrl1}}' style='float:left;width:50rpx;height:50rpx;border-radius: 50%;'></image>
-      <image src='{{imageUrl2}}' style='float:left;width:50rpx;height:50rpx;border-radius: 50%;margin:0 -15rpx;'></image>
-      <image src='{{imageUrl3}}' style='float:left;width:50rpx;height:50rpx;border-radius: 50%;'></image>
+      
     </view>
     <view class='words'>
       <text class="left">{{join}}人报名 / {{hobby}}人感兴趣</text>

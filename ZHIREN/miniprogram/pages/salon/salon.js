@@ -15,6 +15,10 @@ Page({
   getSalons(all){
     let list = [];
     for(let i=0; i<all.length;i++){
+      for (let j = 0; j < all[i].totalSalons.salons.length;j++){
+        all[i].totalSalons.salons[j]["name"] = all[i].name;
+        all[i].totalSalons.salons[j]["avatar"] = all[i].imgUrl;
+      }
       list.push(...all[i].totalSalons.salons)
     }
     console.log(list)
