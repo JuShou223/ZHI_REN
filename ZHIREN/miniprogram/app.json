@@ -1,8 +1,9 @@
 {
   "pages": [
-    "pages/sponsor/sponsor",
-    "pages/sponsor_detail/sponsorDetail",
     "pages/salon/salon",
+    "pages/salon_detail/salon_detail",
+    "pages/sponsor_detail/sponsorDetail",
+    "pages/sponsor/sponsor", 
     "pages/mine/mine"
   ],
   "window": {

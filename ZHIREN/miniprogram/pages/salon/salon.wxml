@@ -1,5 +1,5 @@
 <!--miniprogram/pages/salon/salon.wxml-->
-<view class='list' wx:for='{{list}}' catchtap='toSalonDetail'>
+<view class='list' wx:for='{{list}}' data-id='item.id' catchtap='toSalonDetail'>
   <view class="title">{{title}}</view>
   <view class="zr_container">
     <view class='poster'>

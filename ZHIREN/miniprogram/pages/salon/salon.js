@@ -124,9 +124,9 @@ Page({
     join: 16,
     hobby: 7
   },
-  tosalonDetail: function(e) {
+  toSalonDetail: function(e) {
     wx.navigateTo({
-      url: `/pages/salonDetail/salonDetail?id=${e.currentTarget.dataset.id}`,
+      url: `/pages/salon_detail/salon_detail?id=${e.currentTarget.dataset.id}`,
     })
   },
 
