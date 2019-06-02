@@ -1,9 +1,9 @@
 {
   "pages": [
     "pages/login/login",
+    "pages/salon/salon",
     "pages/salon_detail/salon_detail",
     "pages/mine/mine",
-    "pages/salon/salon",
     "pages/editor/editor",
     "pages/sponsor/sponsor",
     "pages/sponsor_detail/sponsorDetail",

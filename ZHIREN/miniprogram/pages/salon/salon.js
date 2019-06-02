@@ -21,7 +21,6 @@ Page({
       }
       list.push(...all[i].totalSalons.salons)
     }
-    console.log(list)
     this.setData({
       list
     })

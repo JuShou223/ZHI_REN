@@ -21,7 +21,7 @@
     </view>
 
     <view class="zr-tabs">
-      <view class="zr-tab {{curIndex==index?'on':''}}" wx:for="{{lists}}" bindtap="part1" data-index="{{index}}">
+      <view class="zr-tab {{curIndex==index?'on':''}}" wx:for="{{lists}}" bindtap="part1" data-index="{{index}}" wx:key="{{index}}">
         <view style='padding:4rpx '>{{item.name}}</view>
       </view>
     </view>
@@ -101,7 +101,7 @@
         </view>
       </block>
       <block wx:if="{{curIndex==1}}">
-        <view class='zr_sponsorDetail_shalons' wx:for="{{curContent}}" bindtap='tosalonDetail' data-id="{{item.id}}">
+        <view class='zr_sponsorDetail_shalons' wx:for="{{curContent}}" bindtap='tosalonDetail' data-id="{{item.id}}" wx:key="{{index}}">
           <view class='zr_sponsorDetail_shalonTitle'>
             {{item.title}}
           </view>

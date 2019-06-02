@@ -31,7 +31,7 @@
     <view class='zr_sponsorDetail_salonNums'>
       <text decode="{{true}}">主办&nbsp;{{sponsor.totalSalons.numbers}}&nbsp;场沙龙</text>
     </view>
-    <view class='zr_sponsorDetail_shalons' wx:for="{{sponsor.totalSalons.salons}}" bindtap='tosalonDetail' data-id="{{item.id}}">
+    <view class='zr_sponsorDetail_shalons' wx:key="{{index}}" wx:for="{{sponsor.totalSalons.salons}}" bindtap='tosalonDetail' data-id="{{item.id}}">
       <view class='zr_sponsorDetail_shalonTitle'>
         {{item.title}}
       </view>
