@@ -1,12 +1,35 @@
 {
   "pages": [
+<<<<<<< HEAD
     "pages/salon/salon",
     "pages/salon_detail/salon_detail",
+=======
+<<<<<<< HEAD
+    
+=======
+<<<<<<< HEAD
+    "pages/salon/salon",
+    "pages/salon_detail/salon_detail",
+    "pages/sponsor_detail/sponsorDetail",
+    "pages/sponsor/sponsor", 
+    "pages/mine/mine"
+=======
+>>>>>>> a4b029c2dc5f286cde671f811f0d4b78bfd2371c
+>>>>>>> 74c2e7413223a82c0589f012950e17fe0c5432c3
     "pages/login/login",
     "pages/mine/mine",
     "pages/editor/editor",
     "pages/sponsor/sponsor",
+<<<<<<< HEAD
+    "pages/sponsor_detail/sponsorDetail",
+    "pages/basicinfo/basicinfo"
+=======
     "pages/sponsor_detail/sponsorDetail"
+<<<<<<< HEAD
+=======
+>>>>>>> 106984f077a09f6d3a26b9e1f3e59d3073f2ba83
+>>>>>>> a4b029c2dc5f286cde671f811f0d4b78bfd2371c
+>>>>>>> 74c2e7413223a82c0589f012950e17fe0c5432c3
   ],
   "window": {
     "enablePullDownRefresh": true,
