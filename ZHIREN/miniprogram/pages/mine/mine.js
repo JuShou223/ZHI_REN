@@ -5,7 +5,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    avatarUrl:'',
     lists:[
       {
         name:'参加',
@@ -19,26 +18,45 @@ Page({
         name: '关注',
         content: []
       }
-    ]
+    ],
+    curIndex:0,
+    curContent:[]
   },
-
+  goEditor(){
+    wx.navigateTo({
+      url: '/pages/editor/editor',
+    })
+  },
+    jumpset:function() {
+      wx.navigateTo({
+        url: '../set/set',
+      })
+  },
+  part1(e){
+    let index = e.currentTarget.dataset.index;
+    let curContent = this.data.lists[index].content;
+    this.setData({
+      curIndex:index,
+      curContent
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    //获取用户头像与昵称
+    let that = this;
     wx.getUserInfo({
       success: function (res) {
-        console.log(res);
         that.setData({
           nickName: res.userInfo.nickName,
           avatarUrl: res.userInfo.avatarUrl,
         })
+        wx.setNavigationBarTitle({
+          title: that.data.nickName
+        })
       },
     })
-
-
+    
   },
 
 
@@ -74,7 +92,12 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    wx.showLoading({
+      title: '加载中',
+    })
+    setTimeout(function () {
+      wx.hideLoading()
+    }, 1500)
   },
 
   /**

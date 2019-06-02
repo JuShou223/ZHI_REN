@@ -2,7 +2,7 @@
 <view class='zr_sponsorDetail'>
   <view class='zr_sponsorDetail_info'>
     <view class='zr_sponsorDetail_avatar'>
-      <image src='http://img5.imgtn.bdimg.com/it/u=613776445,2854164868&fm=15&gp=0.jpg'></image>
+      <image src='{{sponsor.imgUrl}}'></image>
     </view>
     <view class='zr_sponsorDetail_name'>
       <text>{{sponsor.name}}</text>

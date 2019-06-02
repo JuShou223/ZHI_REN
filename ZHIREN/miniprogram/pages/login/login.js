@@ -1,43 +1,42 @@
-// miniprogram/pages/salon/salon.js
+// miniprogram/pages/login/login.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    list: []
+    show:false
   },
-<<<<<<< HEAD
-  toSalonDetail: function(e) {
-=======
-  tosalonDetail: function (e) {
->>>>>>> 106984f077a09f6d3a26b9e1f3e59d3073f2ba83
-    wx.navigateTo({
-      url: `/pages/salon_detail/salon_detail?id=${e.currentTarget.dataset.id}`,
-    })
-  },
-  getSalons(all){
-    let list = [];
-    for(let i=0; i<all.length;i++){
-      list.push(...all[i].totalSalons.salons)
+  bindGetUserInfo(res) {
+    let info = res;
+    if (info.detail.userInfo) {
+      console.log("点击了同意授权");
+      wx.login({
+        success: function (res) {
+          wx.switchTab({
+            url: '/pages/salon/salon'
+          })
+        }
+      })
+    } else {
+      console.log("点击了拒绝授权");
     }
-    console.log(list)
-    this.setData({
-      list
-    })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.setNavigationBarTitle({
-      title: '沙龙'
-    })
-    wx.request({
-      url: 'https://www.easy-mock.com/mock/5cf34b4428263d2e19427451/zr-data1/zr',
-
-      success: (res) => {
-        this.getSalons(res.data.data.sponsors);
+    let that = this;
+    wx.getUserInfo({
+      success: function (res) {
+        wx.switchTab({
+          url: '/pages/salon/salon'
+        })
+      },
+      fail(err){
+        that.setData({
+          show:true
+        })
       }
     })
   },
@@ -74,19 +73,14 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    wx.showLoading({
-      title: '加载中',
-    })
-    setTimeout(function () {
-      wx.hideLoading()
-    }, 1500)
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    
+
   },
 
   /**
