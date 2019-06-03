@@ -6,7 +6,7 @@
       <input focus='true' style='height:50rpx;' maxlength='20' class='txa' placeholder='请输入{{title}}' value='{{value}}' name='textarea'></input>
     </block>
     <block wx:if="{{index ===3}}">
-      <input focus='true' style='height:50rpx;' maxlength='20' class='txa' value='{{value}}' bindtap='chooseSex' name='textarea'></input>
+      <input focus='fasle' style='height:50rpx;' maxlength='20' class='txa' value='{{value}}' bindtap='chooseSex' name='textarea'></input>
     </block>
     <block wx:if="{{index===6}}">
       <textarea class='txa' placeholder="请输入200字以内的职业经历" name="textarea" value='{{value}}' focus='true'/>

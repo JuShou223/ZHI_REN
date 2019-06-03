@@ -1,10 +1,10 @@
 {
   "pages": [
+    "pages/login/login",
     "pages/mine/mine",
     "pages/editor/editor",
     "pages/basicinfo/basicinfo",
     "pages/salon/salon",
-    "pages/login/login",
     "pages/salon_detail/salon_detail",
     "pages/sponsor/sponsor",
     "pages/sponsor_detail/sponsorDetail"
