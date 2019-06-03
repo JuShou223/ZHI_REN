@@ -25,6 +25,13 @@ Page({
       list
     })
   },
+  setUserInfo(){
+    let userInfo = wx.getStorageSync('userInfo')
+    if(!userInfo){
+      userInfo = {phone:'',wx:'',name:'',sex:'男',company:'',zhiwei:'',zhiye:''}
+    }
+    wx.setStorageSync('userInfo', userInfo)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -50,6 +57,7 @@ Page({
           }
         })
       }
+      that.setUserInfo()
       wx.hideLoading()
     }, 500)
     

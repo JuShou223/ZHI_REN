@@ -5,8 +5,33 @@
       <image src="{{avatarUrl}}" />
     </view>
     <view class='zr-userName' bindtap='goEditor'>
+      <block wx:if="{{userInfo.name==''}}">
       <text>{{nickName}} ></text>
+      </block>
+      <block wx:else>
+      <text>{{userInfo.name}} ></text>
+      </block>
     </view>
+    <block wx:if="{{userInfo.company!=''}}">
+      <view class='zr_company'>
+        <view class='zr_i'>
+          <image src='/images/company.png'></image>
+        </view>
+        <view class='zr_t'>
+          <text>{{userInfo.company}}</text>
+        </view>
+      </view>
+    </block>
+     <block wx:if="{{userInfo.zhiwei != ''}}">
+      <view class='zr_company'>
+        <view class='zr_i'>
+          <image src='/images/ld.png'></image>
+        </view>
+        <view class='zr_t'>
+          <text>{{userInfo.zhiwei}}</text>
+        </view>
+      </view>
+    </block>
     <view class="zr-up2">
       <view class="zr-up2-1">
         <button open-type="contact" style='width:100rpx;height:60rpx;background-color:#fff'>

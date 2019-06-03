@@ -21,7 +21,8 @@ Page({
     ],
     curIndex:0,
     curContent:[],
-    showDialog: false
+    showDialog: false,
+    userInfo:{}
   },
   goEditor(){
     wx.navigateTo({
@@ -169,6 +170,10 @@ Page({
     setTimeout(function () {
       wx.hideLoading()
       let sponsors = wx.getStorageSync('sponsors')
+      let userInfo = wx.getStorageSync('userInfo')
+      that.setData({
+        userInfo
+      })
       that.getInterest(sponsors);
       // this.getJoins();
       that.getFollowed(sponsors);

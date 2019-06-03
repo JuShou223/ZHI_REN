@@ -5,14 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userInfo: {}
   },
-  clicked(e){
-    const name =['手机号','微信号','真实姓名','性别','公司','职位','职业经历']
+  clicked(e) {
     let index = e.currentTarget.dataset.index;
-    let n =name[index];
     wx.navigateTo({
-      url: `/pages/basicinfo/basicinfo?name=${n}`,
+      url: `/pages/basicinfo/basicinfo?index=${index}`,
     })
   },
   /**
@@ -35,6 +33,19 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    let that = this;
+    wx.showLoading({
+      title: '加载中',
+    })
+    setTimeout(function () {
+      let userInfo = wx.getStorageSync('userInfo')
+      if (userInfo) {
+        that.setData({
+          userInfo
+        })
+      }
+      wx.hideLoading()
+    }, 500)
 
   },
 

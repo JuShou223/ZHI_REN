@@ -11,9 +11,16 @@
       <view class='name'>
         <text>手机号</text>
       </view>
+      <block wx:if="{{userInfo.phone===''}}">
       <view class='btn' data-index="0" bindtap='clicked'>
         <text>授权</text>
       </view>
+      </block>
+      <block wx:else>
+      <view class='text' data-index="0" bindtap='clicked'>
+        <text decode="{{true}}">{{userInfo.phone}}&nbsp;&nbsp;&nbsp;&nbsp;></text>
+      </view>
+      </block>
     </view>
     <view class='content'>
       <view class='img'>
@@ -22,9 +29,16 @@
       <view class='name'>
         <text>微信号</text>
       </view>
+      <block wx:if="{{userInfo.wx===''}}">
       <view class='btn' data-index="1" bindtap='clicked'>
         <text>填写</text>
       </view>
+      </block>
+      <block wx:else>
+      <view class='text' data-index="1" bindtap='clicked'>
+        <text decode="{{true}}">{{userInfo.wx}}&nbsp;&nbsp;&nbsp;&nbsp;></text>
+      </view>
+      </block>
     </view>
     <view class='content'>
       <view class='img'>
@@ -33,9 +47,16 @@
       <view class='name'>
         <text>真实姓名</text>
       </view>
-      <view class='btn ' data-index="2" bindtap='clicked'>
+      <block wx:if="{{userInfo.name===''}}">
+      <view class='btn' data-index="2" bindtap='clicked'>
         <text>填写</text>
       </view>
+      </block>
+      <block wx:else>
+      <view class='text' data-index="2" bindtap='clicked'>
+        <text decode="{{true}}">{{userInfo.name}}&nbsp;&nbsp;&nbsp;&nbsp;></text>
+      </view>
+      </block>
     </view>
     <view class='content last'>
       <view class='img'>
@@ -45,7 +66,7 @@
         <text>性别</text>
       </view>
       <view class='text' data-index="3" bindtap='clicked'>
-        <text decode="{{true}}">男&nbsp;&nbsp;&nbsp;&nbsp;></text>
+        <text decode="{{true}}">{{userInfo.sex}}&nbsp;&nbsp;&nbsp;&nbsp;></text>
       </view>
     </view>
     <view class='zr_info'>
@@ -59,9 +80,16 @@
         <view class='name'>
           <text>公司</text>
         </view>
-        <view class='btn' data-index="4" bindtap='clicked'>
-          <text>填写</text>
-        </view>
+        <block wx:if="{{userInfo.company===''}}">
+      <view class='btn' data-index="4" bindtap='clicked'>
+        <text>填写</text>
+      </view>
+      </block>
+      <block wx:else>
+      <view class='text' data-index="4" bindtap='clicked'>
+        <text decode="{{true}}">{{userInfo.company}}&nbsp;&nbsp;&nbsp;&nbsp;></text>
+      </view>
+      </block>
       </view>
       <view class='content'>
         <view class='img'>
@@ -70,9 +98,16 @@
         <view class='name'>
           <text>职位</text>
         </view>
-        <view class='btn' data-index="5" bindtap='clicked'>
-          <text>填写</text>
-        </view>
+        <block wx:if="{{userInfo.zhiwei==''}}">
+      <view class='btn' data-index="5" bindtap='clicked'>
+        <text>填写</text>
+      </view>
+      </block>
+      <block wx:else>
+      <view class='text' data-index="5" bindtap='clicked'>
+        <text decode="{{true}}">{{userInfo.zhiwei}}&nbsp;&nbsp;&nbsp;&nbsp;></text>
+      </view>
+      </block>
       </view>
       <view class='content last'>
         <view class='img'>
@@ -81,9 +116,19 @@
         <view class='name'>
           <text>职业经历</text>
         </view>
-        <view class='btn' data-index="6" bindtap='clicked'>
-          <text>填写</text>
-        </view>
+        <block wx:if="{{userInfo.zhiye===''}}">
+      <view class='btn' data-index="6" bindtap='clicked'>
+        <text>填写</text>
+      </view>
+      </block>
+      <block wx:else>
+      <view class='text' data-index="6" bindtap='clicked'>
+        <text>></text>
+      </view>
+      <view class='zhiyetext'>
+      <text>{{userInfo.zhiye}}</text>
+      </view>
+      </block>
       </view>
     </view>
   </view>

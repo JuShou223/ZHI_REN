@@ -157,7 +157,7 @@ page {
 .zan-dialog__container {
   position: fixed;
   font-weight: 500;
-  bottom: 600rpx;
+  bottom: 500rpx;
   line-height: 100rpx;
   width: 650rpx;
   /* //弹窗布局宽 */

@@ -1,20 +1,20 @@
 {
   "pages": [
-    "pages/login/login",
-    "pages/salon/salon",
-    "pages/salon_detail/salon_detail",
     "pages/mine/mine",
     "pages/editor/editor",
+    "pages/basicinfo/basicinfo",
+    "pages/salon/salon",
+    "pages/login/login",
+    "pages/salon_detail/salon_detail",
     "pages/sponsor/sponsor",
-    "pages/sponsor_detail/sponsorDetail",
-    "pages/basicinfo/basicinfo"
+    "pages/sponsor_detail/sponsorDetail"
   ],
   "window": {
     "enablePullDownRefresh": true,
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#0752aa",
-    "navigationBarTitleText": "主办方",
+    "navigationBarTitleText": "",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {

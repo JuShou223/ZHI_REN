@@ -46,3 +46,10 @@ image{
   line-height: 120rpx;
   margin-right: 50rpx;
 }
+.zhiyetext{
+  width: 630rpx;
+  margin-left: 30rpx;
+  float: left;
+  font-size: 30rpx;
+  margin-bottom: 30rpx;
+}

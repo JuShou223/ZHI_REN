@@ -205,3 +205,19 @@ float: left;
   color: #acb0ac;
 
 }
+.zr_i{
+  width: 48rpx;
+  height: 48rpx;
+  float: left;
+  margin-left: 50rpx;
+}
+.zr_t{
+  line-height: 48rpx;
+  margin-left: 30rpx;
+  float: left;
+  font-size: 30rpx;
+}
+.zr_company{
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
